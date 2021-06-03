@@ -1,0 +1,29 @@
+site_name: The Digital Humanities ToolKit
+nav:
+  - Installation: installation.md
+  - Getting Started: getting_started.md
+  - Guides:
+    - User Guide: user_guide.md
+    - Developer Guide: dev_guide.md
+  - About: about.md
+  - FAQ: faq.md
+  - Reference:
+    - api/dhtk_core_api.md
+    - api/dhtk_extension_gutenberg_api.md
+#theme: readthedocs
+#theme:
+ # name: material
+ # favicon: img/favicon.ico
+  #logo: img/favicon.ico
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          setup_commands:
+            - import sys
+            - sys.path.append('./dhtk/dhtk')
+            - sys.path.append('./dhtk-extension-gutenberg/dhtk/extensions/gutenberg')
+          rendering:
+            show_root_heading: yes

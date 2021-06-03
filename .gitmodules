@@ -1,0 +1,8 @@
+[submodule "dhtk"]
+	path = dhtk
+	url = git@gitlab.com:dhtk/dhtk.git
+	branch = master
+[submodule "dhtk-extension-gutenberg"]
+	path = dhtk-extension-gutenberg
+	url = git@gitlab.com:dhtk/dhtk-extensions/dhtk-extension-gutenberg.git
+	branch = master
