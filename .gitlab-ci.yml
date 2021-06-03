@@ -1,10 +1,12 @@
 image: python:3.8-buster
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
 before_script:
   - pip install mkdocs
   - pip install mkdocstrings
   - pip install mkdocs-material
-  - pip install git+https://docker:yk8tK2nfwE3XJhhV7SxX@gitlab.com/dhtk/dhtk.git
-  - pip install git+https://docker:XLinZVZo5eDzXm7LbXMj@gitlab.com/dhtk/dhtk-extensions/dhtk-extension-gutenberg.git
+  - pip install dhtk/.
+  - pip install dhtk-extension-gutenberg/.
 pages:
   stage: deploy
   script:
