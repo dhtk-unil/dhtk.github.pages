@@ -24,20 +24,18 @@ DHTK contains a number of options to help users start up faster and
 automatically, most of which have a default value. The settings to pay
 more attention to are the following:
 
--   *[user]*: By default, DHTK tries to access the system's information
-    to identify the user. It is possible to change this default user
-    name, which may be particularly relevant when working on shared
-    machines.
--   *[wd]*: DHTK uses the user' home directory to set up its working
-    directory. This can be modified if another directory would be more
-    suitable.
--   *[endpoint]*: DHTK uses a local Fuseki server as its default SPARQL
-    endpoint for querying pre-processed datasets. To use a remote
-    (on-line) endpoint, it can be done by adding the URL (link) to the
-    remote endpoint.
--   *[dataset]*: DHTK is a modular package to which extensions can be
-    easily added. This setting determines which of the available
-    extension modules DHTK should load.
+
+- *[wd]*: DHTK uses the user' home directory to set up its working
+  directory. This can be modified if another directory would be more
+  suitable.
+- *[dataset]*: DHTK is a modular package to which extensions can be
+  easily added. This setting determines which of the available
+  extension modules DHTK should load.
+- *[endpoint]*: To use a remote (on-line) endpoint, it can be done by adding the URL (link) to the
+  remote endpoint. To use a local  server endpoint for querying pre-processed datasets use *[storage]* configuration.
+- *[storage]*:  To use a remote (on-line) endpoint, it can be done by adding the URL (link) to the
+  remote endpoint. To use a remote  server endpoint for querying pre-processed datasets use *[endpoint]* configuration.
+
 ---
  **note**
 
@@ -47,18 +45,14 @@ more attention to are the following:
 ### Modifying configurations
 
 Configurations can be *set directly* by passing their values as keyword
-arguments to the dhtk.start() function.
+arguments to the `dhtk.start()` function.
 
-Alternatively, all settings can be *modified* using Python's dot
-notation to access the configuration object's attributes. For example,
-updating the user name is as simple as configs.user = "new\_user"
 
-DHTK extensions
+DHTK data sources
 ---------------
 
 Using the settings, DHTK will determine which SPARQL endpoint to connect
-and which extension module to load. These two functionalities are all
-handled by the function **dhtk.get\_module()**.
+and which extension module to load. 
 
 Currently, DHTK includes the following extensions:
 

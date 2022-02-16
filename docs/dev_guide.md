@@ -11,18 +11,18 @@ You can contribute to DHTK in many ways:
     run into while using DHTK.
 -   Add or modify minor functionalities to DHTK
 
-New extensions
---------------
+New data sources
+----------------
 
 If you would like to integrate a new dataset to DHTK, please write to
 [Davide Picca](https://www.unil.ch/sli/davidepicca) to let us know!
 
 DHTK modular structure is thought out to simplify integrating new
-modules, features and datasets. DHTK is divided into three parts as
+modules, features and datasets. DHTK is technically divided into three parts as
 described in the [documentation](user_guide.md) page. The three parts are
-organised in separate directories (core, extensions, processing) for
+organised in separate directories (core, data sources, storage) for
 easier identification and navigation during development. This guarantees
-that the new extension functions as a self contained module, independent
+that the new data sources functions as a self contained module, independent
 of the core DHTK modules.
 
 **Set up DHTK**
@@ -53,47 +53,47 @@ Your request will be discussed and reviewed and soon as possibly using
 the normal [Github
 interface](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request).
 
-### RDF Dataset
-
-If the new extension module uses a new pre-processed dataset, the
-finalised RDF file should be made available to download so it can be
-added to the local Fuseki endpoint. These files can be stored in any
-remote location, as long as freely accessible, though we would recommend
-using [Zenodo](https://about.zenodo.org/).
-
-For reproducibility and transparency, the full pipeline used to produce
-the provided RDF file (including clear instructions on how to use it)
-should also be made available under the **"builder directory"** of the
-module *(e.g. dhtk/extensions/gutenberg/builder/)*
-
 ### Integrating new modules
 
-DHTK core modules are responsible to locate and load any module within
-the extension directory. Due to the modular architecture of DHTK, these
-extensions can be easily developed as self-sufficient Python modules,
-which are integrated into the DHTK framework trough their path
-dhtk.extentions.gutenberg for example.
+DHTK core module is responsible to locate and load any module within
+the data source directory. Due to the modular architecture of DHTK, these
+data sources can be easily developed as self-sufficient Python modules,
+which are integrated into the DHTK framework through their path
+`dhtk.data_sources.gutenberg` for example.
 
-All dhtk extentions should be named dhtk-extension-EXTENTION\_NAME so
+*Note*:
+
+All dhtk data sources should be named `dhtk.data_source.DATASOURCE_NAME` (i.e. `dhtk.data_source.gutenberg`) so
 that everyone can find them on the net.
 
-**Creating an extension**
+#### Procedure
 
-1. clone
-    dhtk-extension-BLUEPRINT \<https://gitlab.com/dhtk/dhtk-extensions/dhtk-extension-BLUEPRINT\>
-    and follow its README
-2. Add the class named Module, inheriting from the **AbstractExtension
-    blueprint**, to the module's \_\_init\_\_ file.
+We provide [4 different data storages](https://gitlab.com/dhtk/dhtk_data_sources/examples) already setup 
+and ready to use.
+- `dhtk_data_source_dummysql`: blueprint package to be used if you need SQL storage (MariaDB)
+- `dhtk_data_source_dummynosql`: blueprint package to be used if you need NoSQL storage (MongoDB)
+- `dhtk_data_source_dummytei`: blueprint package to be used if you need XML-TEI storage (BaseX)
+- `dhtk_data_source_dummytriplestore`: blueprint package to be used if you need RDF storage (Fuseki)
+
+
+
+
+**Creating a data source**
+
+![variables](/Users/dpicca/PycharmProjects/dhtk-dev-env/dhtk.gitlab.io/docs/img/init_file.png)
+
+1. Clone one of the 4 bleuprint available
+2. Define `name`and `data_file` variables as shown in Figure [1](#variables) 
 3. Complete the Module class by defining at least the required
-    attributes and methods: *name, url, .get() and .save()*.
-4. Update the README.md and setup.py to make the module installable.
+    attributes and methods: `get_data_file` , `__init__` and `get`
+4. Update the `README.md` and `setup.py` to make the module installable.
 
-**Extension integration into dhtk**
+**Data source integration into dhtk**
 
-The DHTK AbstractExtension abstract class contains most of the required
+The DHTK `AbstractDataSource` abstract class contains most of the required
 methods to prepare a module for use. The new **Module class** is
-essentially a wrapper around a DHTK extension, defining the attributes
-**name** and **url** (name of the extension and location of the RDF data
+essentially a wrapper around a DHTK data source, defining the attributes
+**name** and **url** (name of the data source and location of the RDF data
 file to use on with the local SPARQL endpoint), and the **methods to
 query and save the results**. Any additional method that improves the
 Module class can be freely included.
@@ -180,15 +180,15 @@ Minor changes
 
 If you think DHTK is missing some simple functionality or could be made
 simpler and easier in some way, and you want to contribute by helping us
-implement those changes, thanks you! However, before you do so, please
-write to Davide Picca \<https://www.unil.ch/sli/davidepicca\> to let us
+implement those changes, thank you! However, before you do so, please
+write to [Davide Picca](https://www.unil.ch/sli/davidepicca) to let us
 know!
 
 As a collective effort, we remain an open to everyone's contributions.
 Everyone can add or modify any function, class or method to improve DHTK
 usability of an existing DHTK module easily:
 
-1. Please visit our [GitHub page](https://gitlab.com/dhtk/dhtk) to
+1. Please visit our [GitLab page](https://gitlab.com/dhtk/dhtk) to
     find detailed information on how to contribute.
 2. Add an issue to the repository to let us know what you will be
     working on.
@@ -199,3 +199,17 @@ usability of an existing DHTK module easily:
 Your request will be discussed and reviewed and soon as possibly using
 the normal [Github
 interface](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request).
+
+
+### RDF Dataset
+
+If the new extension module uses a new pre-processed dataset, the
+finalised RDF file should be made available to download so it can be
+added to the local Fuseki endpoint. These files can be stored in any
+remote location, as long as freely accessible, though we would recommend
+using [Zenodo](https://about.zenodo.org/).
+
+For reproducibility and transparency, the full pipeline used to produce
+the provided RDF file (including clear instructions on how to use it)
+should also be made available under the **"builder directory"** of the
+module *(e.g. dhtk/extensions/gutenberg/builder/)*
