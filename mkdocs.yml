@@ -27,4 +27,4 @@ plugins:
       handlers:
         python:
           rendering:
-          show_root_heading: yes
+            show_root_heading: yes
