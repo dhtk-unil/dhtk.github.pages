@@ -30,8 +30,10 @@ of the core DHTK modules.
 1. Please visit our [GitHub page](https://gitlab.com/dhtk/dhtk) to find
     detailed information on how to contribute.
 2. Add an issue to the repository to let us know what you will be
-    working on and request the access[^1].[^1]: DHTK will be soon publicly available.
+    working on and request the access[^1].
 3. Clone the DHTK repository and create your own branch.
+
+[^1]: DHTK will be soon publicly available.
 
 **Develop module**
 
