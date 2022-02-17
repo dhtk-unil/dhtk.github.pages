@@ -3,8 +3,9 @@ before_script:
   - pip install mkdocs
   - pip install mkdocstrings
   - pip install mkdocs-material
-  - pip install git+https://docker:yk8tK2nfwE3XJhhV7SxX@gitlab.com/dhtk/dhtk.git
-  - pip install git+https://docker:XLinZVZo5eDzXm7LbXMj@gitlab.com/dhtk/dhtk-extensions/dhtk-extension-gutenberg.git
+  - pip install git+ssh:git@gitlab.com/dhtk/dhtk.git
+  - pip install git+ssh:git@gitlab.com/dhtk/dhtk_data_sources/dhtk_data_source_gutenberg.git
+  - pip install git+ssh:git@gitlab.com/dhtk/dhtk_data_sources/dhtk_data_source_auchinleck.git
 pages:
   stage: deploy
   script:
