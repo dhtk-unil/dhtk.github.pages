@@ -3,9 +3,9 @@ before_script:
   - pip install mkdocs
   - pip install mkdocstrings
   - pip install mkdocs-material
-  - pip install git@gitlab.com:dhtk/dhtk.git
-  - pip install git@gitlab.com:dhtk/dhtk_data_sources/dhtk_data_source_gutenberg.git
-  - pip install git@gitlab.com:dhtk/dhtk_data_sources/dhtk_data_source_auchinleck.git
+  - pip install git+https://git@gitlab.com/dhtk/dhtk.git
+  - pip install git+https://git@gitlab.com/dhtk/dhtk_data_sources/dhtk_data_source_gutenberg.git
+  - pip install git+https://git@gitlab.com/dhtk/dhtk_data_sources/dhtk_data_source_auchinleck.git
 pages:
   stage: deploy
   script:
