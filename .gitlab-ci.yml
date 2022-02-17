@@ -1,16 +1,7 @@
 image: python:3.8-buster
-before_script:
-  - pip install mkdocs
-  - pip install mkdocstrings
-  - pip install mkdocs-material
-  - pip install git+ssh://git@gitlab.com/dhtk/dhtk.git
-  - pip install git+ssh://git@gitlab.com/dhtk/dhtk_data_sources/dhtk_data_source_gutenberg.git
-  - pip install  git+ssh://git@gitlab.com/dhtk/dhtk_data_sources/dhtk_data_source_auchinleck.git
-    - pip install  git@gitlab.com/dhtk/dhtk_storages/dhtk_storage_docker.git
 pages:
   stage: deploy
   script:
-    - mkdocs build
     - mv site public
   artifacts:
     paths:
