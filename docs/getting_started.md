@@ -29,9 +29,9 @@ more attention to are the following:
 - *[wd]*: DHTK uses the user' home directory to set up its working
     directory. This can be modified if another directory would be more
     suitable.
-- *[dataset]*: DHTK is a modular package to which extensions can be
-    easily added. This setting determines which of the available
-    extension modules DHTK should load.
+- *[dataset]*: DHTK is a modular package to which extensions can be easily added. 
+    This setting determines the available
+    extension modules that DHTK should load.
 - *[endpoint]*: To use a remote (on-line) endpoint, it can be done by adding the URL (link) to the
     remote endpoint. To use a local  server endpoint for querying pre-processed datasets use *[storage]* configuration.
 - *[storage]*:  To use a remote (on-line) endpoint, it can be done by adding the URL (link) to the
@@ -41,25 +41,23 @@ DHTK is flexible and can accept several input formats. Hereunder, there are seve
 
 ### Set DHTK configuration file
 ```python
->>> import dhtk
->>> d  = dhtk.start("WD", config={"gutenberg": {"storage":  "docker"}, "auchinleck": {"storage": "docker" }})
+import dhtk
+d  = dhtk.start("WD", config={"gutenberg": {"storage":  "docker"}, "auchinleck": {"storage": "docker" }})
 
->>> import dhtk
->>> d = dhtk.start("WD", config={"gutenberg":{'triplestore' : {"storage":  "docker"}}})
+d = dhtk.start("WD", config={"gutenberg":{'triplestore' : {"storage":  "docker"}}})
 
->>> import dhtk
->>> d =dhtk.start("WD", data_source="gutenberg", storage="docker")
+d =dhtk.start("WD", data_source="gutenberg", storage="docker")
 
->>> import dhtk
->>> d = dhtk.start("WD", data_sources=["gutenberg", "auchinleck"], storage="docker")
+d = dhtk.start("WD", data_sources=["gutenberg", "auchinleck"], storage="docker")
 
->>> import dhtk
->>> d = dhtk.start("WD", gutenberg={"storage": "docker"}, auchinleck={"endpoint": "http://localhost:3031/ds/sparql" } )
+d = dhtk.start("WD", gutenberg={"storage": "docker"}, auchinleck={"endpoint": "http://localhost:3031/ds/sparql" } )
 
 ```
 
 ### Load the module
-Modules are autmatically loaded using the *dhtk.start()* function. In this guided example, we will illustrate using the original Gutenberg DHTK data source. This dataset allows the user to easily query [https://www.gutenberg.org/](https://www.gutenberg.org/) for books, authors, bookshelves and subjects, retrieving all the available information as a DHTK Corpus.
+Modules are automatically loaded using the *dhtk.start()* function. 
+In this guided example, we will illustrate using the original Gutenberg DHTK data source. 
+This dataset allows the user to easily query [https://www.gutenberg.org/](https://www.gutenberg.org/) for books, authors, bookshelves and subjects, retrieving all the available information as a DHTK Corpus.
 
 ### Access the data
 Authors are searched using the *what="author"* argument. This will return a Python list containing all authors. To access a particular author, users must pass the author's name to the *name* argument.
@@ -72,7 +70,7 @@ authors
 ```
 then to access to *Mary Wollstonecraft Shelley* GutenbergAuthor object.
 ```python
-authors['Mary Wollstonecraft Shelley']
+>> authors['Mary Wollstonecraft Shelley']
 # <Author: Shelley, Mary (http://www.gutenberg.org/2009/agents/61>)
 ```
 Similarly, Books are searched using the *what="book"* argument. This will return a list containing all books.

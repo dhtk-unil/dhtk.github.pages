@@ -22,7 +22,7 @@ modules, features and datasets. DHTK is technically divided into three parts as
 described in the [documentation](user_guide.md) page. The three parts are
 organised in separate directories (core, data sources, storage) for
 easier identification and navigation during development. This guarantees
-that the new data sources functions as a self contained module, independent
+that the new data sources functions as a self-contained module, independent
 of the core DHTK modules.
 
 **Set up DHTK**
@@ -30,7 +30,7 @@ of the core DHTK modules.
 1. Please visit our [GitHub page](https://gitlab.com/dhtk/dhtk) to find
     detailed information on how to contribute.
 2. Add an issue to the repository to let us know what you will be
-    working on.
+    working on and request the access[^1].[^1]: DHTK will be soon publicly available.
 3. Clone the DHTK repository and create your own branch.
 
 **Develop module**
@@ -80,7 +80,7 @@ and ready to use.
 
 **Creating a data source**
 
-![variables](/Users/dpicca/PycharmProjects/dhtk-dev-env/dhtk.gitlab.io/docs/img/init_file.png)
+![variables](img/init_file.png)
 
 1. Clone one of the 4 bleuprint available
 2. Define `name`and `data_file` variables as shown in Figure [1](#variables) 

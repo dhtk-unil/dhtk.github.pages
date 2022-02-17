@@ -8,24 +8,23 @@ nav:
     - Developer Guide: dev_guide.md
   - About: about.md
   - FAQ: faq.md
-  #- API:
-    #- api/DHTK.md
-  - API: mkapi/api/dhtk
-#theme: readthedocs
+  - API:
+    - API/DHTK.md
+
 theme:
+  #name: gitbook
   name: material
   favicon: img/favicon.ico
   logo: img/favicon.ico
+
+markdown_extensions:
+  - footnotes
+
 plugins:
   - search
-  - mkapi:
-  #- mkdocstrings:
-  #    default_handler: python
-  #    handlers:
-  #     python:
-  #        setup_commands:
-            #- import sys
-            #- sys.path.append('./dhtk/dhtk')
-            #- sys.path.append('./dhtk-extension-gutenberg/dhtk/extensions/gutenberg')
-  #        rendering:
-  #          show_root_heading: yes
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+          show_root_heading: yes
