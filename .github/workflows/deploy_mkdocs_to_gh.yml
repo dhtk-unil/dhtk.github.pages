@@ -1,0 +1,57 @@
+name: Deploy MkDocs documentation to Pages
+
+on:
+  push:
+    branches:
+      - master
+
+  # Allow to run this workflow manually from the Actions tab
+  # workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install DHTK and copy source files
+        env:
+          # TODO: create a DHTK_TOKEN repository secret here: https://github.com/dhtk-unil/dhtk.gitlab.io/settings/secrets/actions
+          GITHUB_TOKEN: ${{ secrets.DHTK_TOKEN }}
+        run: | # it is mandatory to create a venv, because package management is different than for a local install
+          python -m venv venv
+          source venv/bin/activate
+          python -m pip install --upgrade pip
+          pip install git+https://oauth:$GITHUB_TOKEN@github.com/dhtk-unil/dhtk.git
+          pip install git+https://oauth:$GITHUB_TOKEN@github.com/dhtk-unil/dhtk_data_source_gutenberg.git
+          pip install git+https://oauth:$GITHUB_TOKEN@github.com/dhtk-unil/dhtk_data_source_auchinleck.git
+          pip install git+https://oauth:$GITHUB_TOKEN@github.com/dhtk-unil/dhtk_storage_docker.git
+          ls -al ./venv/lib/
+          mv ./venv/lib/python3.10/site-packages/dhtk ./
+          deactivate
+          rm -r ./venv
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install -r requirements.txt
+      - name: Deploy site with MkDocs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ls -al ./dhtk
+          mkdocs gh-deploy --force --verbose
+          

@@ -27,7 +27,7 @@ of the core DHTK modules.
 
 **Set up DHTK**
 
-1. Please visit our [GitHub page](https://gitlab.com/dhtk/dhtk) to find
+1. Please visit our [GitHub page](https://github.com/dhtk-unil/dhtk) to find
     detailed information on how to contribute.
 2. Add an issue to the repository to let us know what you will be
     working on and request the access[^1].
@@ -70,12 +70,11 @@ that everyone can find them on the net.
 
 #### Procedure
 
-We provide [4 different data storages](https://gitlab.com/dhtk/dhtk_data_sources/examples) already setup 
-and ready to use.
-- `dhtk_data_source_dummysql`: blueprint package to be used if you need SQL storage (MariaDB)
-- `dhtk_data_source_dummynosql`: blueprint package to be used if you need NoSQL storage (MongoDB)
-- `dhtk_data_source_dummytei`: blueprint package to be used if you need XML-TEI storage (BaseX)
-- `dhtk_data_source_dummytriplestore`: blueprint package to be used if you need RDF storage (Fuseki)
+We provide 4 different data storages already setup and ready to use:
+- [`dhtk_data_source_dummysql`](https://github.com/dhtk-unil/dhtk_data_source_dummysql): blueprint package to be used if you need SQL storage (MariaDB)
+- [`dhtk_data_source_dummynosql`](https://github.com/dhtk-unil/dhtk_data_source_dummynosql): blueprint package to be used if you need NoSQL storage (MongoDB)
+- [`dhtk_data_source_dummytei`](https://github.com/dhtk-unil/dhtk_data_source_dummytei): blueprint package to be used if you need XML-TEI storage (BaseX)
+- [`dhtk_data_source_dummytriplestore`](https://github.com/dhtk-unil/dhtk_data_source_dummytriplestore): blueprint package to be used if you need RDF storage (Fuseki)
 
 
 
@@ -190,7 +189,7 @@ As a collective effort, we remain an open to everyone's contributions.
 Everyone can add or modify any function, class or method to improve DHTK
 usability of an existing DHTK module easily:
 
-1. Please visit our [GitLab page](https://gitlab.com/dhtk/dhtk) to
+1. Please visit our [Github page]((https://github.com/dhtk-unil/dhtk)) to
     find detailed information on how to contribute.
 2. Add an issue to the repository to let us know what you will be
     working on.
