@@ -51,6 +51,22 @@ and simplify research in the Digital Humanities.
 
 **Changelog**
 
+??? note "Version 1.0.2"
+
+    - Unified framework for simplified programmatic access </li>
+    - Modularisation and addition of "module wrapper template" for easier  integration of additional modules</li>
+    - Automated DHTK's system check, including local Docker installation and configuration checks for local endpoints (macOS only)</li>
+    
+
+    
+??? note "Version 1.0.1"
+
+    - **Clean Text** module to remove Gutenberg's header, footer and footnotes
+    - **Test files** that will help us provide you with a stable working toolkit, as well as help in adding new features and implementing contributions from the community
+    
+
+    
+<!--
 <details>
 
     <summary markdown="span"> <b> Version 1.0.2 </b> </summary>
@@ -66,12 +82,13 @@ and simplify research in the Digital Humanities.
 
     <summary markdown="span"> <b>Version 1.0.1 </b></summary>
     <ul>
-        <li>*"Clean Text"* module to remove Gutenberg's header, footer and
+        <li><b>Clean Text</b> module to remove Gutenberg's header, footer and
         footnotes</li>
-        <li>*"Test"* files that will help us provide you with a stable working
+        <li>"Test" files that will help us provide you with a stable working
         toolkit, as well as help in adding new features and implementing
         contributions from the community</li>
     </ul>
 
 </details>
+-->
 

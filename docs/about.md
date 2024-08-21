@@ -46,7 +46,7 @@ Thanks to all students of UNIL's Python object oriented programming class
 contribute to the project.
 
 ### Past Contributors
-Everyone who has collaborated with us so far, is still not giving up on the project! :-)
+Everyone who has collaborated with us so far, is still not giving up on the project! 🙂
 
 [Language and Information Science]: http://unil.ch/sli
 [Insight Centre for Data Analytics]: http://www.insight-centre.org
