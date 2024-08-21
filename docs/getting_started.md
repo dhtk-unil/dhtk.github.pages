@@ -9,18 +9,29 @@ environment by
 [importing](https://docs.python.org/3/reference/import.html?highlight=import)
 it as normally.
 
+We assume in this tutorial that the modules `dhtk_storage_docker`, `dhtk_data_source_gutenberg` and `dhtk_data_source_auchinleck` are installed.
+
 ### Import dhtk
 
-```python
+``` python
 import dhtk
- # ###################################################
- # Welcome to the Digital Humanities ToolKit,
- # the  user - friendly Python API for
- # Digital Humanities research.
- #
- # For more information, please visit DHTK 's website:
- # [https://dhtk.unil.ch/]
- # ####################################################
+``` 
+``` text title="Output:"
+################################################################
+Welcome to the Digital Humanities ToolKit,
+the user-friendly Python API for 
+Digital Humanities research.
+
+For more information, please visit DHTK's website:
+[https://dhtk-unil.github.io/dhtk.github.pages]
+
+Installed data_sources:
+  ['auchinleck', 'gutenberg']
+Installed storages:
+  ['docker', 'remote', 'embedded']
+
+n.b. for usage example: dhtk.print_usage_example()
+################################################################
 ``` 
 DHTK contains a number of options to help users start up faster and
 automatically, most of which have a default value. The settings to pay
@@ -30,37 +41,35 @@ more attention to are the following:
     directory. This can be modified if another directory would be more
     suitable.
 - *[dataset]*: DHTK is a modular package to which extensions can be easily added. 
-    This setting determines the available
-    extension modules that DHTK should load.
+    This setting determines the available extension modules that DHTK should load.
 - *[endpoint]*: To use a remote (on-line) endpoint, it can be done by adding the URL (link) to the
-    remote endpoint. To use a local  server endpoint for querying pre-processed datasets use *[storage]* configuration.
+    remote endpoint. To use a local server endpoint for querying pre-processed datasets use *[storage]* configuration.
 - *[storage]*:  To use a remote (on-line) endpoint, it can be done by adding the URL (link) to the
-    remote endpoint. To use a remote  server endpoint for querying pre-processed datasets use *[endpoint]* configuration.
+    remote endpoint. To use a remote server endpoint for querying pre-processed datasets use *[endpoint]* configuration.
+
 
 DHTK is flexible and can accept several input formats. Hereunder, there are several working examples:
 
 ### Set DHTK configuration file
+
 ```python
 import dhtk
-d  = dhtk.start("WD", config={"gutenberg": {"storage":  "docker"}, "auchinleck": {"storage": "docker" }})
 
-d = dhtk.start("WD", config={"gutenberg":{'triplestore' : {"storage":  "docker"}}})
-
-d =dhtk.start("WD", data_source="gutenberg", storage="docker")
-
+d = dhtk.start("WD", config={"gutenberg": {"storage":  "docker"}, "auchinleck": {"storage": "docker" }})
+d = dhtk.start("WD", config={"gutenberg":{"triplestore": {"storage":  "docker"}}})
+d = dhtk.start("WD", data_source="gutenberg", storage="docker")
 d = dhtk.start("WD", data_sources=["gutenberg", "auchinleck"], storage="docker")
-
-d = dhtk.start("WD", gutenberg={"storage": "docker"}, auchinleck={"endpoint": "http://localhost:3031/ds/sparql" } )
-
+d = dhtk.start("WD", gutenberg={"storage": "docker"}, auchinleck={"endpoint": "http://localhost:3031/ds/sparql" })
 ```
 
 ### Load the module
-Modules are automatically loaded using the *dhtk.start()* function. 
+Modules are automatically loaded using the `dhtk.start()` function. 
 In this guided example, we will illustrate using the original Gutenberg DHTK data source. 
 This dataset allows the user to easily query [https://www.gutenberg.org/](https://www.gutenberg.org/) for books, authors, bookshelves and subjects, retrieving all the available information as a DHTK Corpus.
 
 ### Access the data
-Authors are searched using the *what="author"* argument. This will return a Python list containing all authors. To access a particular author, users must pass the author's name to the *name* argument.
+Authors are searched using the `what="author"` argument. This will return a Python list containing all authors. To access a particular author, users must pass the author's name to the `name` argument.
+
 ```python
 authors = gutenberg.get(what="author", name="Shelley")
 authors
@@ -69,11 +78,13 @@ authors
 # 'Mary Wollstonecraft Shelley': <Author: Shelley, Mary (http://www.gutenberg.org/2009/agents/61>)}
 ```
 then to access to *Mary Wollstonecraft Shelley* GutenbergAuthor object.
+
 ```python
 >> authors['Mary Wollstonecraft Shelley']
 # <Author: Shelley, Mary (http://www.gutenberg.org/2009/agents/61>)
 ```
-Similarly, Books are searched using the *what="book"* argument. This will return a list containing all books.
+Similarly, Books are searched using the `what="book"` argument. This will return a list containing all books.
+
 ```python
 books = gutenberg.get(what="books", name="Frankenstein")
 books
@@ -133,6 +144,6 @@ book.print_info()
 metadata = book.get_metadata()
 ```
 
-***to know more***`
+***To know more***
 
-please refer to the [user guide page](user_guide.md)
+Please refer to the [user guide page](user_guide.md).

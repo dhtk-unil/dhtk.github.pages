@@ -16,9 +16,27 @@ theme:
   name: material
   favicon: img/favicon.ico
   logo: img/favicon.ico
+  # make code copyable to clipboard and annotatable
+  features:
+    - content.code.copy
+    - content.code.annotate
 
 markdown_extensions:
   - footnotes
+  # For admonitions (info/notes/warnings/etc. extendable blocks)
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  # For code blocks and highlighting
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  # Use markdown in HTML blocks
+  - md_in_html
 
 plugins:
   - search

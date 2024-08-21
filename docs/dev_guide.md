@@ -6,10 +6,10 @@ survival and growth. We are thankful for any contribution and are happy
 to welcome you to the DHTK community!
 
 You can contribute to DHTK in many ways:
--   Contribute to the development of new extensions
--   Sending us feedback with suggestions or let us know of any issue you
-    run into while using DHTK.
--   Add or modify minor functionalities to DHTK
+
+- Contribute to the development of new extensions 
+- Sending us feedback with suggestions or let us know of any issue you run into while using DHTK. 
+- Add or modify minor functionalities to DHTK
 
 New data sources
 ----------------
@@ -71,6 +71,7 @@ that everyone can find them on the net.
 #### Procedure
 
 We provide 4 different data storages already setup and ready to use:
+
 - [`dhtk_data_source_dummysql`](https://github.com/dhtk-unil/dhtk_data_source_dummysql): blueprint package to be used if you need SQL storage (MariaDB)
 - [`dhtk_data_source_dummynosql`](https://github.com/dhtk-unil/dhtk_data_source_dummynosql): blueprint package to be used if you need NoSQL storage (MongoDB)
 - [`dhtk_data_source_dummytei`](https://github.com/dhtk-unil/dhtk_data_source_dummytei): blueprint package to be used if you need XML-TEI storage (BaseX)
@@ -81,10 +82,13 @@ We provide 4 different data storages already setup and ready to use:
 
 **Creating a data source**
 
-![variables](img/init_file.png)
+<figure markdown="span">
+    ![New module structure](img/init_file.png)
+    <figcaption>Figure 1 - Signature of a new Module</figcaption>
+</figure>
 
-1. Clone one of the 4 bleuprint available
-2. Define `name`and `data_file` variables as shown in Figure [1](#variables) 
+1. Clone one of the 4 blueprints available.
+2. Define `name`and `data_file` variables as shown in Figure 1.
 3. Complete the Module class by defining at least the required
     attributes and methods: `get_data_file` , `__init__` and `get`
 4. Update the `README.md` and `setup.py` to make the module installable.
@@ -99,7 +103,7 @@ file to use on with the local SPARQL endpoint), and the **methods to
 query and save the results**. Any additional method that improves the
 Module class can be freely included.
 
-****Gutenberg example****
+_**Gutenberg example**_
 
 **1. Create a module specific directory**: The gutenberg subdirectory
 was created on the dhtk's extension directory. All the files from the
@@ -172,7 +176,7 @@ can contribute as part of the DHTK community by letting us know how to
 improve DHTK to best fit your research needs.
 
 If you have any question, suggestion or feedback please
-write to Davide Picca \<https://www.unil.ch/sli/davidepicca\>
+write to [Davide Picca](https://www.unil.ch/sli/davidepicca).
 
 *All suggestions and feedback are welcomed!*
 
@@ -189,7 +193,7 @@ As a collective effort, we remain an open to everyone's contributions.
 Everyone can add or modify any function, class or method to improve DHTK
 usability of an existing DHTK module easily:
 
-1. Please visit our [Github page]((https://github.com/dhtk-unil/dhtk)) to
+1. Please visit our [Github page](https://github.com/dhtk-unil/dhtk) to
     find detailed information on how to contribute.
 2. Add an issue to the repository to let us know what you will be
     working on.

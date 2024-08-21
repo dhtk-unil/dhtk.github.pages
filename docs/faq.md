@@ -14,15 +14,15 @@ functionalities to quickly grow and support different areas of research.
 - How do I use DHTK?
 
 You can find information on how to install DHTK as well as the getting started guide on the
-[Gettting Started](./docs/getting_started) page.
+[Getting Started](getting_started.md) page.
 
 - I would like to have access to some of more technical information related to DHTK
 
-Complete technical information is available in the `DHTK Architecture <./architecture.html>`_ page,
+Complete technical information is available in the `DHTK Architecture <./architecture.html>` page,
 which contains further links to more detailed information about DHTK internal structure.
 
 
 - I want to contribute to DHTK, how can I contact you?
 
 Thank you for your interesting in joining our effort. If you are interested in developing or improving DHTK
-you can find instructions and contact form on the `Community <./community.html>`_ page.
+you can find instructions and contact form on the `Community <./community.html>` page.

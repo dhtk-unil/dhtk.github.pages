@@ -57,7 +57,7 @@ and which extension module to load.
 Currently, DHTK includes the following extensions:
 
 -   [Project Gutenberg](#gutenberg)
--   [Auchinkleck manuscript](#auchinleck)
+-   [Auchinleck manuscript](#auchinleck)
 
 ### Gutenberg
 
@@ -89,7 +89,7 @@ query.
  *add=False* is the default value, so this argument can be simply
  ignored by the user in such cases.
 ---
-****Searching for a bookshelf****
+_**Searching for a bookshelf**_
 
 To check which [bookshelves](http://www.gutenberg.org/ebooks/bookshelf/)
 are available in DHTK's Gutenberg, set *what="shelf"* and *name="all"*.
@@ -112,7 +112,7 @@ of regular Python operations. For example, to identify all books that
 are simultaneously found on the bookshelves "Precursors of Science
 Fiction" and "Science Fiction by Women":
 
-****Searching for a subject****
+_**Searching for a subject**_
 
 Gutenberg [subjects](http://www.gutenberg.org/ebooks/subjects/search/)
 can be searched using *what="subject"*. Subject names are structured
@@ -120,14 +120,14 @@ hierarchically, making it possible to define the granularity of such
 queries. Each hierarchy is separated by -- *(e.g. Subject -- Sub-subject
 -- Sub-sub-subject)*
 
-****Searching for a book****
+_**Searching for a book**_
 
 Gutenberg books can be searched using the *what="book"* argument. This
 will return a dictionary of books containing the text passed as *name*.
 To avoid long names, the dictionary keys returned are truncated at 20
 characters.
 
-****Searching for an author****
+_**Searching for an author**_
 
 Gutenberg books can be searched using the *what="author"* argument.
 
@@ -144,12 +144,12 @@ from the dictionaries obtained while searching as described above.
  exploratory and instantiating all objects would be less efficient in
  respect to both performance and memory.
 ---
-****Get book information****
+_**Get book information**_
 
 Retrieving metadata is simple as all Gutenberg objects have the
 **.print\_info()** method:
 
-****Get author information****
+_**Get author information**_
 
 Author objects are retrieved with author searches as described above.
 However, book objects also contain the author information as attribute.
@@ -158,7 +158,7 @@ Because of this, there are two ways to access an author object:
 Accessing the author's information can be done as easily as for books,
 using the **.print\_info()** method:
 
-****Get book text****
+_**Get book text**_
 
 The original text for a Gutenberg book can also be accessed if required,
 using the GutenbergBook method **.original\_text()**.
@@ -176,9 +176,9 @@ metadata retrieved from [Guntenberg.org](http://www.gutenberg.org/).
  instantiated with **.get\_module()** function for each different
  corpus
 ---
-****Make a Corpus****
+_**Make a Corpus**_
 
-****Retrieve books****
+_**Retrieve books**_
 
 Individual books can be retrieved from a Gutenberg Corpus using the
 **.books()** method and passing a book name to the *get* argument.
@@ -186,7 +186,7 @@ Individual books can be retrieved from a Gutenberg Corpus using the
 Passing the value *get="all"* will return a dictionary of books added to
 the corpus.
 
-****Modifying Corpus****
+_**Modifying Corpus**_
 
 As seem in the "Get book information" above, the book *Frankenstein; Or,
 The Modern Prometheus* with ID *<http://www.gutenberg.org/ebooks/84>*
@@ -199,7 +199,12 @@ directory where the books will be stored. This can be done simply by
 passing the *name* and *description* arguments to the **.corpus()**
 method used above.
 
-****Save Corpus****
+_**Save Corpus**_
 
 When all the information as been added to a corpus, it can be easily
 saved to disk using the **.save()** method.
+
+
+### Auchinleck
+
+*Under construction...*
